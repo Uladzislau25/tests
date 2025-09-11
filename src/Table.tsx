@@ -1,4 +1,3 @@
-
 type TableCarsType = {
     cars: TypeCars[]
 }
@@ -20,11 +19,13 @@ export const Table = (props: TableCarsType) => {
                 </thead>
 
                 <tbody>
-
+                {props.cars.map(car => {
+                    return (
                         <tr>
-                            <td>{}</td>
-                            <td></td>
-                        </tr>
+                            <td>{car.manufacturer}</td>
+                            <td>{car.model}</td>
+                        </tr>)
+                })}
                 </tbody>
             </table>
 
