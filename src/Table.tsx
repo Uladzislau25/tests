@@ -1,6 +1,13 @@
 
+type TableCarsType = {
+    cars: TypeCars[]
+}
+type TypeCars = {
+    manufacturer: string
+    model: string
+}
 
-export const Table = () => {
+export const Table = (props: TableCarsType) => {
     return (
         <div>
             <table>
@@ -15,7 +22,7 @@ export const Table = () => {
                 <tbody>
 
                         <tr>
-                            <td></td>
+                            <td>{}</td>
                             <td></td>
                         </tr>
                 </tbody>
