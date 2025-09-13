@@ -13,7 +13,30 @@ export function splitIntoWords(sentense: string){
             .replace("!", ""));
 }
 
-export const student = {
+type CityTape = {
+    title: string
+    country: string
+}
+type AdressType = {
+    street: string
+    city: CityTape
+}
+type TechType = {
+    id: number
+    title: string
+
+}
+type StydentType = {
+    id: number
+    name: string
+    age: number
+    isActive: boolean
+    adress: AdressType
+    technologies: TechType[]
+}
+
+export const student: StydentType = {
+    id: 1,
     name: "Dimych",
     age: 32,
     isActive: false,
@@ -24,7 +47,7 @@ export const student = {
             country: "Belarus"
         }
     },
-    techologies: [
+    technologies: [
         {
             id: 1,
             title: "HTML",
