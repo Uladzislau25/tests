@@ -1,16 +1,18 @@
 import {multiply, splitIntoWords, sum} from "./01.ts";
-import {test, expect} from "vitest";
+import {test, expect, beforeEach} from "vitest";
+
+let a: number;
+let b: number;
+let c: number;
+
+beforeEach(() => {
+    a = 1;
+    b = 2;
+    c = 3;
+})
 
 test('sum should be correct', () => {
-
-
-
-    let a = 1;
-    let b = 2;
-    let c = 3;
-
     //
-
 
     const result = sum(a, b);
     const result1 = sum(a, c);
@@ -23,11 +25,6 @@ test('sum should be correct', () => {
 test('multiply should be correct', () => {
 
 
-
-    let a = 1;
-    let b = 2;
-    let c = 3;
-
     //
 
 
@@ -38,7 +35,7 @@ test('multiply should be correct', () => {
     expect(result).toBe(2);
     expect(result1).toBe(3);
 })
-test("splitting into words should be correct", ()=> {
+test("splitting into words should be correct", () => {
     const sent1 = "Hello my friend!";
     const sent2 = "JS - the best  programming language";
 
