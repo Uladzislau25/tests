@@ -53,32 +53,59 @@ test("splitting into words should be correct", () => {
     expect(result2[3]).toBe("programming");
     expect(result2[4]).toBe("language");
 })
-let city: CityTape;
+
+let countru: CityTape;
 
 beforeEach(() => {
-    city = {
+    countru = {
         title: "New York",
-        houses:[],
+        houses: [{
+            bildedAt: 2012,
+            repaired: false,
+            address: {
+                number: 100,
+                street: {
+                    tittle: "White street"
+                }
+            }
+        }, {
+            bildedAt: 2008,
+            repaired: false,
+            address: {
+                number: 100,
+                street: {
+                    tittle: "Happy street"
+                }
+            }
+        }, {
+            bildedAt: 2020,
+            repaired: false,
+            address: {
+                number: 101,
+                street: {
+                    tittle: "Happy street"
+                }
+            }}],
         governmentBuildings: [],
         cityzensNumber: 1000000
     }
 })
 test("test city should contains 3 houses", () => {
-    expect(city.houses.length).toBe(3);
+    expect(countru.houses.length).toBe(3);
 
-    expect(city.houses[0].buildedAt).toBe(2012);
-    expect(city.houses[0].repaired).toBe(false);
-    expect(city.houses[0].adress.number).toBe(100);
-    expect(city.houses[0].address.street.title).toBe("White street");
+    expect(countru.houses[0].bildedAt).toBe(2012);
+    expect(countru.houses[0].repaired).toBe(false);
+    expect(countru.houses[0].address.number).toBe(100);
+    expect(countru.houses[0].address.street.tittle).toBe("White street");
 
-    expect(city.houses[1].buildedAt).toBe(2008);
-    expect(city.houses[1].repaired).toBe(false);
-    expect(city.houses[1].adress.number).toBe(100);
-    expect(city.houses[1].address.street.title).toBe("Happy street");
+    expect(countru.houses[1].bildedAt).toBe(2008);
+    expect(countru.houses[1].repaired).toBe(false);
+    expect(countru.houses[1].address.number).toBe(100);
+    expect(countru.houses[1].address.street.tittle).toBe("Happy street");
 
-    expect(city.houses[2].buildedAt).toBe(2020);
-    expect(city.houses[2].repaired).toBe(false);
-    expect(city.houses[2].adress.number).toBe(101);
-    expect(city.houses[2].address.street.title).toBe("Happy street");
+    expect(countru.houses[2].bildedAt).toBe(2020);
+    expect(countru.houses[2].repaired).toBe(false);
+    expect(countru.houses[2].address.number).toBe(101);
+    expect(countru.houses[2].address.street.tittle).toBe("Happy street");
 
 })

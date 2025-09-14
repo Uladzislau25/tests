@@ -15,10 +15,21 @@ export function splitIntoWords(sentense: string) {
             .replace("!", ""));
 }
 
+export type StreetType = {
+    tittle: String
+}
+export type AddressType = {
+    number: number;
+    street: StreetType
+}
+export type HouseType = {
+    bildedAt: number
+    repaired: boolean
+    address: AddressType
+}
 export type CityTape = {
     title: string
-    houses: Array<string>
+    houses: HouseType[]
     governmentBuildings: string[]
     cityzensNumber: number
-
 }
