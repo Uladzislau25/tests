@@ -1,4 +1,4 @@
-import {multiply, splitIntoWords, sum} from "./01.ts";
+import {CityTape, multiply, splitIntoWords, sum} from "./01.ts";
 import {test, expect, beforeEach} from "vitest";
 
 let a: number;
@@ -52,6 +52,33 @@ test("splitting into words should be correct", () => {
     expect(result2[2]).toBe("best");
     expect(result2[3]).toBe("programming");
     expect(result2[4]).toBe("language");
+})
+let city: CityTape;
 
+beforeEach(() => {
+    city = {
+        title: "New York",
+        houses:[],
+        governmentBuildings: [],
+        cityzensNumber: 1000000
+    }
+})
+test("test city should contains 3 houses", () => {
+    expect(city.houses.length).toBe(3);
+
+    expect(city.houses[0].buildedAt).toBe(2012);
+    expect(city.houses[0].repaired).toBe(false);
+    expect(city.houses[0].adress.number).toBe(100);
+    expect(city.houses[0].address.street.title).toBe("White street");
+
+    expect(city.houses[1].buildedAt).toBe(2008);
+    expect(city.houses[1].repaired).toBe(false);
+    expect(city.houses[1].adress.number).toBe(100);
+    expect(city.houses[1].address.street.title).toBe("Happy street");
+
+    expect(city.houses[2].buildedAt).toBe(2020);
+    expect(city.houses[2].repaired).toBe(false);
+    expect(city.houses[2].adress.number).toBe(101);
+    expect(city.houses[2].address.street.title).toBe("Happy street");
 
 })
