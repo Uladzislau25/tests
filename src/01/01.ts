@@ -19,7 +19,7 @@ export type StreetType = {
     tittle: String
 }
 export type AddressType = {
-    number: number;
+    number?: number;
     street: StreetType
 }
 export type HouseType = {
@@ -27,9 +27,15 @@ export type HouseType = {
     repaired: boolean
     address: AddressType
 }
+export type GovernmentBuildingsType = {
+    type: string
+    budget: number
+    staffCount: number
+    address: AddressType
+}
 export type CityTape = {
     title: string
     houses: HouseType[]
-    governmentBuildings: string[]
+    governmentBuildings: GovernmentBuildingsType[]
     cityzensNumber: number
 }

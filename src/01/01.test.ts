@@ -86,7 +86,25 @@ beforeEach(() => {
                     tittle: "Happy street"
                 }
             }}],
-        governmentBuildings: [],
+        governmentBuildings: [{
+            type: "HOSPITAL",
+            budget: 200000,
+            staffCount: 200,
+            address: {
+                street: {
+                    tittle:"Central Str"
+                }
+            }
+        },{
+            type: "FIRE-STATION",
+            budget: 500000,
+            staffCount: 1000,
+            address: {
+                street: {
+                    tittle:"South Str"
+                }
+            }
+        }],
         cityzensNumber: 1000000
     }
 })
@@ -108,4 +126,18 @@ test("test city should contains 3 houses", () => {
     expect(countru.houses[2].address.number).toBe(101);
     expect(countru.houses[2].address.street.tittle).toBe("Happy street");
 
+})
+
+test("test city should contains hospital and fire stations",() => {
+    expect(countru.governmentBuildings.length).toBe(2);
+
+    expect(countru.governmentBuildings[0].type).toBe("HOSPITAL");
+    expect(countru.governmentBuildings[0].budget).toBe(200000);
+    expect(countru.governmentBuildings[0].staffCount).toBe(200);
+    expect(countru.governmentBuildings[0].address.street.tittle).toBe("Central Str");
+
+    expect(countru.governmentBuildings[1].type).toBe("FIRE-STATION");
+    expect(countru.governmentBuildings[1].budget).toBe(500000);
+    expect(countru.governmentBuildings[1].staffCount).toBe(1000);
+    expect(countru.governmentBuildings[1].address.street.tittle).toBe("South Str");
 })
